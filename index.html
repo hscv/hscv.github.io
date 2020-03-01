@@ -104,14 +104,15 @@
               </li>
         </ul>
       </div> -->
-<div id="loginCsiDiv" class="cutLink"><ul>
-  <li class="fli li1"><a href="javascript:void()" onclick="login()">登录</a></li>
+<div id="loginCsiDiv" class="cutLink">
+<!-- <ul> -->
+<!--   <li class="fli li1"><a href="javascript:void()" onclick="login()">登录</a></li>
   <li class="li2"><a href="http://www.tipdm.org/register.jspx">注册</a></li>
   <li class="tsearchBtn">
     <input type="text" name="q" placeholder="请输入您要查找的内容" maxlength="50" autocomplete="off" class="tsearchInput">
-    <a id="searchBtn" class="searchBtn">搜索</a></li>
+    <a id="searchBtn" class="searchBtn">搜索</a></li> -->
   <!--<li class="hRace"><a href="/raceApply/index.jhtml">举办竞赛</a></li>-->
-</ul>
+<!-- </ul> -->
 <script language="javascript" type="text/javascript">
 $("#userImg").mouseover(function(){
 	$(".userImg span").css("display","block");
@@ -192,7 +193,7 @@ $(function(){
     </div>
     <div class="bd">
         <ul>
-            <li class="li1" style="background-image:url(&#39;/u/cms/www/202003/010419424jca.jpg&#39;)">
+            <li class="li1" style="background-image:url(&#39;./files/log.png&#39;)">
                 <a class="allLink" href="http://www.tipdm.org/tzjingsai/1628.jhtml" target="_blank">
                 </a>
             </li>
@@ -360,6 +361,49 @@ $(function() {Cms.collectexist("","1630","cancelSpan","comfirmSpan");});
                 <p>论文提交网站：http://baidu.com</p>
 
                 </p><p style="white-space: normal;"><strong>七、大赛奖励</strong></p><p style="white-space: normal; text-indent: 2em;">本次高光谱视频跟踪挑战赛两个组共评出：</p><p style="white-space: normal; text-indent: 2em;">&nbsp;▶ 特等并获企业冠名奖：3队，采用视频答辩的形式，<span style="text-indent: 32px;">由高校和企业专家综合评审，颁发高光谱视频跟踪挑战赛<span style="text-indent: 32px;">&nbsp;特等并获企业冠名奖</span>荣誉证书、出题企业冠名奖杯</span>，并提供每队<strong><span style="color: rgb(255, 0, 0);">20000元</span></strong>奖金（<span style="text-indent: 32px;">需扣除个人所得税</span>）。</p><p style="white-space: normal; text-indent: 2em;">&nbsp;▶ 特等奖：3队，采用视频答辩的形式，<span style="text-indent: 32px;">由高校和企业专家综合评审，颁发高光谱视频跟踪挑战赛特等奖荣誉证书</span>，并提供每队<strong><span style="color: rgb(255, 0, 0);">10000元</span></strong>奖金<span style="text-indent: 32px;">（<span style="text-indent: 32px;">需扣除个人所得税</span>）</span>。</p><p style="white-space: normal; text-indent: 2em;">&nbsp;▶ <span style="text-indent: 32px;">一等奖：约2%，不超过51队，颁发高光谱视频跟踪挑战赛一等奖荣誉证书。</span></p><p style="white-space: normal; text-indent: 2em;">&nbsp;▶ <span style="text-indent: 32px;">二等奖：约5%，颁发高光谱视频跟踪挑战赛二等奖荣誉证书。</span></p><p style="white-space: normal; text-indent: 2em;">&nbsp;▶ <span style="text-indent: 32px;">三等奖：约10%，颁发高光谱视频跟踪挑战赛三等奖荣誉证书。</span></p><p style="white-space: normal; text-indent: 2em;">获奖者可优先得到XXXX实习及推荐工作机会。实习优秀者将获优先签约权。</p><p style="white-space: normal; text-indent: 2em;">其余成功提交有效论文的参赛队均获得高光谱视频跟踪挑战赛成功参赛电子证书。</p><p style="white-space: normal; text-indent: 2em;"><span style="color: rgb(255, 0, 0);">注：参赛队员与指导老师均有证书。</span></p><p style="white-space: normal;"><strong>六、获奖名单公布</strong></p><p style="white-space: normal; text-indent: 2em;">获奖名单将在<span style="text-indent: 2em;"><a href="http://www.tipdm.org/gyrs/787.jhtml" target="_blank">数睿思</a>网站（www.tipdm.org</span>）上公布。<a href="http://www.tipdm.xn--org-x28ds8msxx/"></a></p><p style="white-space: normal;"><strong>八、企业赞助</strong></p><p style="white-space: normal; text-indent: 2em;">本<span style="text-indent: 32px;">挑战赛</span>由出题企业提供赞助。</p><p style="white-space: normal;"><strong>八、竞赛组织委员会联系方式</strong></p><p style="white-space: normal; text-indent: 2em;">地址：广东省广州市黄埔区开泰大道36号（邮编：510663 ）</p><p style="white-space: normal; text-indent: 2em;">电话：（020）22205718</p><p style="white-space: normal; text-indent: 2em;">联系人：林老师，13560006281、18122707493（微信同号），jingsai@tipdm.com</p>
+
+                <p style="white-space: normal;"><strong>附录-相关代码</strong></p>
+                <p style="white-space: normal; text-indent: 2em;">
+                <span style="text-indent: 32px;">高光谱图像转三维数据的代码
+
+
+                <div style="background-color: #f6f6f6">
+                  <pre>
+                    <code>
+  def X2Cube(img):
+    B = [4, 4]
+    skip = [4, 4]
+    # Parameters
+    M, N = img.shape
+    col_extent = N - B[1] + 1
+    row_extent = M - B[0] + 1
+
+    # Get Starting block indices
+    start_idx = np.arange(B[0])[:, None] * N + np.arange(B[1])
+
+    # Generate Depth indeces
+    didx = M * N * np.arange(1)
+    start_idx = (didx[:, None] + start_idx.ravel()).reshape((-1, B[0], B[1]))
+
+    # Get offsetted indices across the height and width of input array
+    offset_idx = np.arange(row_extent)[:, None] * N + np.arange(col_extent)
+
+    # Get all actual indices & index into input array for final output
+    out = np.take(img, start_idx.ravel()[:, None] + offset_idx[::skip[0], ::skip[1]].ravel())
+    out = np.transpose(out)
+    # print ('out.shape = ',out.shape)
+    # print ('M = ',M,' , N = ',N)
+    img = out.reshape(M//4, N//4, 16)
+    img = img / img.max() * 255 #  归一化
+    img.astype('uint8')
+    return img
+                    </code>
+                  </pre>
+                </div>
+                
+                </p>
+
+
                    </div>
 		  <div class="moreTxt"><a id="showConTxt" style="display: none;">❤ 阅读详细内容</a></div>
 		  <script>
